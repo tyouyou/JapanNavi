@@ -1,19 +1,25 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import { SiderNavi } from './components/sider/sider.jsx';
+import { Layout } from 'antd';
+const { Header, Sider, Content, Footer } = Layout;
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-      </div>
+        <Layout>
+          <SiderNavi />
+          <Layout style={{ marginLeft: 200 }}>
+            <Header className="Header" > 日本网址导航 </Header>
+            <Content style={{ margin: '24px 16px 0', overflow: 'initial' }}>
+              <div style={{ padding: 24, background: '#fff', textAlign: 'center' }}>
+                Content
+              </div>
+            </Content>
+            <Footer style={{ textAlign: 'center' }}>Footer</Footer>
+          </Layout>
+        </Layout>
     );
   }
 }
